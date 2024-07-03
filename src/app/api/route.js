@@ -36,6 +36,41 @@ export const listaDeBodySplash = [
         descricao:"Um aroma brilhante para despertar desejo e sofisticação",
         avaliacao:"5.0"
     },
+    {
+        id: 6,
+        nome: "Body Splash Pureblixx",
+        preço: "R$99,60",
+        descricao:"O verdadeiro elixir inebriante feito para você",
+        avaliacao:"2.0"
+    },
+    {
+        id: 7,
+        nome: "Body Splash Infinity Star",
+        preço: "R$99,70",
+        descricao:"Encontro celestial de bem-estar",
+        avaliacao:"4.0"
+    },
+    {
+        id: 8,
+        nome: "Body Splash VF Aqua",
+        preço: "R$99,80",
+        descricao:"Pele perfumada em uma essência única e refrescante",
+        avaliacao:"4.4"
+    },
+    {
+        id: 9,
+        nome: "Body Splash Obsessed",
+        preço: "R$99,90",
+        descricao:"Uma fragrância marcante e intensa para o seu bem-estar",
+        avaliacao:"5.0"
+    },
+    {
+        id: 10,
+        nome: "Body Splash One Touch",
+        preço: "R$99,99",
+        descricao:"Exale poder e bem-estar",
+        avaliacao:"2.2"
+    },
 ];
 
 
