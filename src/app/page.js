@@ -1,12 +1,11 @@
-import Image from "next/image";
+import Main from './components/Main';
 import "./styles.css";
-import Link from "next/link";
+
+
 
 export default function Home() {
 
   return (
-    <main>
-     
-    </main>
+    <Main/>
   );
 }
