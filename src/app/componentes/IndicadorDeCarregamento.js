@@ -5,7 +5,7 @@ export default function IndicadorDeCarregamento() {
         <Image
         width={100}
         height={100}
-        src= ''
+        src= '' //colocar a imagem em public
         alt = 'imagem carregando'
         />
     );

@@ -1,7 +1,7 @@
 'use client'
 import Image from "next/image";
 import Link from 'next/link';
-import Spinner from "./Spinner"; //mudar o nome de spinner
+import IndicadorDeCarregamento from "./IndicadorDeCarregamento"; 
 import { useEffect, useState } from "react";
 import styles from "./main.module.css";
 import ErrorGet from "./ErrorGet";
