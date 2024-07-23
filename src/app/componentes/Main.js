@@ -16,7 +16,7 @@ export default function Main (){
 
     useEffect(()=>{
       const getProduct = async () =>{
-       try{  const response = await fetch ("https://fakestoreapi.com/products");
+       try{  const response = await fetch ("/api");
         const data = await response.json();
         
         setListProduct(data);
@@ -28,18 +28,16 @@ export default function Main (){
     };
       getProduct();
     }, []);
-}
+
 
 const orderAz = () =>{
-    const newList = [...listProduct].sort(  (a,b)=>
-          a.title.localeCompare(b.title)
+    const newList = [...listProduct].sort(  (a,b)=>  a.nome.localeCompare(b.nome)
     );
     setListProduct(newList);
   }
 
   const orderZa = () => {
-    let newList = [...listProduct].sort( (a,b)=>
-        a.localeCompare(b.title)
+    let newList = [...listProduct].sort( (a,b)=> a.nome.localeCompare(b.nome)
     );
     newList = newList.reverse();
     setListProduct(newList);
@@ -47,15 +45,13 @@ const orderAz = () =>{
     
 
    const ordermais = () =>{
-    const newList = [...listProduct].sort ( (a,b)=>
-          a.price - b.price
+    let newList = [...listProduct].sort ( (a,b)=>  a.preco - b.preco  
     );
     setListProduct(newList);
    }
 
    const ordermenos = () =>{
-    let newList = [...listProduct].sort ( (a,b)=>
-          a.price - b.price
+    let newList = [...listProduct].sort ( (a,b)=>  a.preco - b.preco
     );
     newList= newList.reverse();
     setListProduct(newList);
@@ -63,53 +59,64 @@ const orderAz = () =>{
 
    const searchText = (text)=>{
     setSearch (text);
-    if(text.trim() == ""){
+    if(text.trim() === ""){
       setListProduct(listComplet);
-      return
+      return;
     }
 
-    //A const searchText é uma função de pesquisa, que nesse caso aí pesquisa pelo nome do produto.
-    const newList = listProduct.filter((product) =>
-    product.title.toUpperCase().trim().includes(search.toUpperCase().trim()));
+    
+    const newList = listComplet.filter((product) =>
+    product.nome.toUpperCase().trim().includes(search.toUpperCase().trim()));
     setListProduct(newList);
    }
 
-   //E esse if aí é quando ocorre um erro do Fetch ele retorna o componente ErrorGetData
-   if(errorFetch == true){
-    return <ErrorGetData/>
+   
+   if(errorFetch){
+    return <ErrorGet/>
    }
 
    if (listProduct[0]==null){
-    //mudar o noe do spinner
-    return <Spinner/>
+    
+    return <IndicadorDeCarregamento/>
    }
 
   
     return(
       <>
-      <div>
+      <div className={styles.searchContainer}>
+                <input
+                    type="text"
+                    value={search}
+                    placeholder="Pesquise o produto"
+                    onChange={(event) => searchText(event.target.value)}
+                    className={styles.searchInput}
+                />
           <button className={styles.button} onClick={orderAz}>AZ</button>
           <button className={styles.button} onClick={orderZa}>ZA</button>
-          <button className={styles.button} onClick={ordermais}>Menor preço</button>
-          <button className={styles.button} onClick={ordermenos}>Maior preço</button>
+          <button className={styles.button} onClick={ordermais}>Maior preço</button>
+          <button className={styles.button} onClick={ordermenos}>Menor preço</button>
       </div>
    <main className={styles.main}>
-    {listProduct.map((products) =>
+    {listProduct.map((products) => ( 
 
 
     <div className={styles.card} key={products.id}>
-      <p>{products.title}</p>
-      <p>{products.description}</p>
-      <p>{products.category}</p>
-      <p>{products.rating.count}</p>
+      <h3>{products.nome}</h3>
+      <p>{products.descricao}</p>
+      <p>Preço: {products.preço}</p>
+      <p>Avaliação: {products.avaliacao}</p>
       <Image
       width={200}
       height={200}
       src={products.image} />
 
-      
+        <Link href={'/products/${products.id}'}>
+            Ver produto
+        </Link>
+
     </div>
-    )}
+    ))}
   </main>
   </>
-    );
+  );
+}

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from '.header.module.css';
+import styles from './header.module.css';
 
 export default function Header () {
     return(
@@ -8,7 +8,7 @@ export default function Header () {
                 <Image className={styles.logo}
                 width={100}
                 height={100}
-                src={"https://raw.githubusercontent.com/marianepsantos/meu-projeto-express-ejs/main/public/imagem/Captura%20de%20Tela%20(59).png"}
+                src={"https://wepink.vtexassets.com/assets/vtex/assets-builder/wepink.store-theme/3.0.12/svg/logo-primary___5bd0e7fa6451ba181395889123dfe00a.svg"}
             />
             </div>
 
