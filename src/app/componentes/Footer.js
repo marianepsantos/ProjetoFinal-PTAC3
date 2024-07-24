@@ -14,6 +14,8 @@ export default function Footer(){
             alt = "Logo"
             />
 
+
+           <div className={styles.imageContainer}> 
             <Image 
             className={styles.imginsta}
             width={100}
@@ -37,7 +39,7 @@ export default function Footer(){
             src = "https://wepink.vtexassets.com/assets/vtex/assets-builder/wepink.store-theme/3.0.12/svg/facebook___6d7c4858762b8dffde03370b551efd02.svg"
             alt = "Logo"
             />
-
+         </div>
             
         </footer>
     )}
