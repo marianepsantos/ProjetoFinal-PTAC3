@@ -45,7 +45,7 @@ const orderAz = () =>{
     
 
    const ordermais = () =>{
-    let newList = [...listProduct].sort ( (a,b)=>  a.preco - b.preco  
+     newList = [...listProduct].sort ( (a,b)=>  a.preco - b.preco  
     );
     setListProduct(newList);
    }
@@ -93,8 +93,8 @@ const orderAz = () =>{
                 />
           <button className={styles.button} onClick={orderAz}>AZ</button>
           <button className={styles.button} onClick={orderZa}>ZA</button>
-          <button className={styles.button} onClick={ordermais}>Maior preço</button>
-          <button className={styles.button} onClick={ordermenos}>Menor preço</button>
+          <button className={styles.button} onClick={ordermenos}>Maior preço</button>
+          <button className={styles.button} onClick={ordermais}>Menor preço</button>
       </div>
    <main className={styles.main}>
     {listProduct.map((products) => ( 

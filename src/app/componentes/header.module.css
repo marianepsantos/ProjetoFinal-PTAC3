@@ -1,13 +1,17 @@
-.cssheader{
-
-};
-
-
-.logo {
-
-};
-
-
-.carrinhoo {
-
-};
+.cssheader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 2x;
+  }
+  
+  .logo {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .carrinhoo {
+    width: 25px;
+    height: 25px;
+  }

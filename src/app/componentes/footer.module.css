@@ -1,9 +1,10 @@
 .footer {
-
-};
-
-
-
-.imgfooter {
-
-};
+    background-color: #f8f9fa;
+    padding: 2px;
+    text-align: center;
+  }
+  
+  .imgfooter {
+    width: 100px;
+    height: 100px;
+  }
