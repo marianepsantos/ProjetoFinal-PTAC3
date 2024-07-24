@@ -45,7 +45,7 @@ const orderAz = () =>{
     
 
    const ordermais = () =>{
-     newList = [...listProduct].sort ( (a,b)=>  a.preco - b.preco  
+    const newList = [...listProduct].sort ( (a,b)=>  a.preco - b.preco  
     );
     setListProduct(newList);
    }
@@ -93,22 +93,23 @@ const orderAz = () =>{
                 />
           <button className={styles.button} onClick={orderAz}>AZ</button>
           <button className={styles.button} onClick={orderZa}>ZA</button>
-          <button className={styles.button} onClick={ordermenos}>Maior preço</button>
-          <button className={styles.button} onClick={ordermais}>Menor preço</button>
+          <button className={styles.button} onClick={ordermais}>Maior preço</button>
+          <button className={styles.button} onClick={ordermenos}>Menor preço</button>
       </div>
    <main className={styles.main}>
     {listProduct.map((products) => ( 
 
 
     <div className={styles.card} key={products.id}>
+       <Image className={styles.img}
+      width={200}
+      height={200}
+      src={products.imagem} />
       <h3>{products.nome}</h3>
       <p>{products.descricao}</p>
       <p>Preço: {products.preco}</p>
       <p>Avaliação: {products.avaliacao}</p>
-      <Image
-      width={200}
-      height={200}
-      src={products.imagem} />
+     
 
         <Link href={'/products/${products.id}'}>
             Ver produto
