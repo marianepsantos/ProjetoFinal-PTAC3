@@ -1,11 +1,17 @@
 .footer {
     background-color: #ff69b4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
  
 
   }
 
   .imageContainer {
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 20px; 
 }
   
@@ -18,8 +24,5 @@
   .imginsta {
     width: 30px;
     height: 30px;
-    padding: 3px;
-    display: block; 
-    margin-left: auto; 
-    margin-right: auto; 
+    
   }
