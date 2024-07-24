@@ -8,11 +8,12 @@ import ErrorGet from "./ErrorGet";
 
 export default function Main (){
 
-    
     const [listProduct, setListProduct] = useState([]);
     const [listComplet, setListComplet] = useState([]);
     const [search, setSearch] = useState("");
     const [errorFetch, setErrorGet] = useState(false);
+
+
 
     useEffect(()=>{
       const getProduct = async () =>{
