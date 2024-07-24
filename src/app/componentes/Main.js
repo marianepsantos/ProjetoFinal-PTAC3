@@ -12,18 +12,18 @@ export default function Main (){
     const [listProduct, setListProduct] = useState([]);
     const [listComplet, setListComplet] = useState([]);
     const [search, setSearch] = useState("");
-    const [errorFetch, setErrorFetch] = useState(false);
+    const [errorFetch, setErrorGet] = useState(false);
 
     useEffect(()=>{
       const getProduct = async () =>{
-       try{  const response = await fetch ("/api");
+       try{  const response = await fetch ("http://localhost:3000/api");
         const data = await response.json();
         
         setListProduct(data);
         setListComplet(data);
         
       }catch{
-        setErrorFetch();
+        setErrorGet(true);
       }
     };
       getProduct();
@@ -71,7 +71,7 @@ const orderAz = () =>{
    }
 
    
-   if(errorFetch){
+   if(errorFetch == true){
     return <ErrorGet/>
    }
 
@@ -103,12 +103,12 @@ const orderAz = () =>{
     <div className={styles.card} key={products.id}>
       <h3>{products.nome}</h3>
       <p>{products.descricao}</p>
-      <p>Preço: {products.preço}</p>
+      <p>Preço: {products.preco}</p>
       <p>Avaliação: {products.avaliacao}</p>
       <Image
       width={200}
       height={200}
-      src={products.image} />
+      src={products.imagem} />
 
         <Link href={'/products/${products.id}'}>
             Ver produto
